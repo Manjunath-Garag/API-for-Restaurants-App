@@ -78,14 +78,14 @@ router.route('/restaurants')
      
      .put(function(req,res){
         var data = {
-        retaurant_id: req.body.restaurant_id,
+        restaurant_id: req.body.restaurant_id,
         restaurant_name: req.body.restaurant_name,
         location: req.body.location,
         cuisines: req.body.cuisines,
         price_per_table: req.body.price_per_table,
         no_of_tables: req.body.no_of_tables,
      };    
-            var id = req.params.retaurant_id;
+            var id = req.params.restaurant_id;
             var queryString = "UPDATE restaurantsdb set ? WHERE restaurant_id = ? ";
  
  conn.query(queryString,[data,id],function(err,restaurantsdb){
@@ -96,9 +96,8 @@ console.log(err);
 console.log(res[0]);
 res.json(restaurantsdb);
 }
-	});
+});
 });//update method
-
 
 //Search w.r.t Name, Loc, Cuisines, Price per table For the CUSTOMER.
 router.route('/search/:key')
