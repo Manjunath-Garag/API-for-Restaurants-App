@@ -21,7 +21,7 @@ router.route('/booking/:customer_id')
 // booking a table
      .post(function(req,res){
     var data = {
-        retaurant_id: req.body.retaurant_id,
+        restaurant_id: req.body.restaurant_id,
         customer_id: req.params.customer_id,
         location: req.body.location,
         cuisines: req.body.cuisines,
@@ -54,4 +54,4 @@ conn.query(queryString,[data],function(err,details){
             res.json(status);
            }
 			});
-	})//delete
+	})//delete method.
