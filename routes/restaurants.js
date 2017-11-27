@@ -108,8 +108,7 @@ router.route('/search/:key')
      var  tables = req.params.no_of_tables;
     
           var queryString = "SELECT restaurant_name,location,price_per_table,cuisines,no_of_tables as type FROM restaurants WHERE restaurant_name LIKE" + SqlString.escape(searchKey) + "OR cuisines LIKE" + 
-
-      SqlString.escape(searchKey) + "OR location LIKE" + SqlString.escape(searchKey) + "OR no_of_tables =" + "?";
+	      SqlString.escape(searchKey) + "OR location LIKE" + SqlString.escape(searchKey) + "OR no_of_tables =" + "?";
 
 conn.query(queryString,[searchKey],function(err,rest,restaurantsdb){
              if(err){
