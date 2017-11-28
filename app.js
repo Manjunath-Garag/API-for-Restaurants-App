@@ -5,8 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var index = require('./routes/restaurants');
-var users = require('./routes/book_del');
+var restaurants = require('./routes/restaurants');
+var book_del = require('./routes/book_del');
 
 var dbConn=require('./Config/mysqlConnection');
 
